@@ -38,10 +38,12 @@ app.post('/api/window/apply-settings', (req, res) => {
   res.json({ ok: true });
 });
 
+// TODO: Implement file selection in the Express backend
 app.get('/api/dialog/openFile', (req, res) => {
   res.status(501).json({ error: 'Not implemented' });
 });
 
+// TODO: Implement directory selection in the Express backend
 app.get('/api/dialog/openDirectory', (req, res) => {
   res.status(501).json({ error: 'Not implemented' });
 });
