@@ -62,14 +62,25 @@ Beta/nightly build available [here](https://vrcx.app/github/nightly) or in-app `
 - For a guide on how to run VRCX on linux, see [here](https://github.com/vrcx-team/VRCX/wiki/Running-VRCX-on-Linux)
 ## Web Deployment
 
+
+To serve VRCX through a standard web browser you can build the frontend and run the Express backend. Ensure Node.js and the .NET runtime are installed and run the following:
+
+```bash
+npm install
+
 To serve VRCX through a standard web browser you can build the frontend and run the Express backend:
 
 ```bash
+
 npm run prod-linux
 node web-server/server.js
 ```
 
+
+Set `VRCX_BACKEND_URL` when building to configure the API base URL and `VRCX_AUTH_TOKEN` to protect the endpoints. A simple `Dockerfile` is provided for container deployments. If webpack runs out of memory you can export `NODE_OPTIONS=--max_old_space_size=4096` before running the build.
+
 Set `VRCX_BACKEND_URL` when building to configure the API base URL and `VRCX_AUTH_TOKEN` to protect the endpoints. A simple `Dockerfile` is provided for container deployments.
+
 
 When deploying remotely please review VRChat's API policies; see the legal notice below.
 
