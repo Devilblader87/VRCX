@@ -76,6 +76,10 @@ npm run prod-linux
 node web-server/server.js
 ```
 
+Note: When running the Express backend the `/api/dialog/openFile` and
+`/api/dialog/openDirectory` routes are currently unimplemented and return
+`501 Not Implemented`.
+
 
 Set `VRCX_BACKEND_URL` when building to configure the API base URL and `VRCX_AUTH_TOKEN` to protect the endpoints. A simple `Dockerfile` is provided for container deployments. If webpack runs out of memory you can export `NODE_OPTIONS=--max_old_space_size=4096` before running the build.
 
