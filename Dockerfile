@@ -1,4 +1,10 @@
 FROM node:20
+
+RUN apt-get update && \
+    apt-get install -y dotnet-runtime-9.0 && \
+    rm -rf /var/lib/apt/lists/*
+ENV DOTNET_ROOT=/usr/lib/dotnet
+
 WORKDIR /app
 COPY . .
 

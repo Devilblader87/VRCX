@@ -71,8 +71,15 @@ npm install
 npm run prod-linux
 ```
 
+
 If the runtime is not installed under `/usr/lib/dotnet`, set `DOTNET_ROOT` to
 the install directory.
+
+Note: When running the Express backend the `/api/dialog/openFile` and
+`/api/dialog/openDirectory` routes are currently unimplemented and return
+`501 Not Implemented`.
+
+
 
 Launch the server with:
 
