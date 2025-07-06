@@ -95,6 +95,7 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             LINUX: JSON.stringify(process.env.PLATFORM === 'linux'),
+            API_BASE_URL: JSON.stringify(process.env.VRCX_BACKEND_URL || ""),
             WINDOWS: JSON.stringify(process.env.PLATFORM === 'windows')
         }),
         new VueLoaderPlugin(),

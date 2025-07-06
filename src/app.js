@@ -123,7 +123,7 @@ import {
     getEmojiFileName,
     languageClass
 } from './composables/user/utils';
-import InteropApi from './ipc-electron/interopApi.js';
+import InteropApi from './interopApi.js';
 import * as localizedStrings from './localization/localizedStrings.js';
 
 // util classes
