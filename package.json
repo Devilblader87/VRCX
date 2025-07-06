@@ -8,10 +8,11 @@
         "watch-linux": "cross-env PLATFORM=linux webpack --config webpack.config.js --mode development --watch",
         "localization": "node ./src/localization/localizationHelperCLI.js",
         "prod": "cross-env PLATFORM=windows webpack --config webpack.config.js --mode production",
-        "prod-linux": "cross-env PLATFORM=linux webpack --config webpack.config.js --mode production",
+        "prod-linux": "cross-env NODE_OPTIONS=--max_old_space_size=4096 PLATFORM=linux webpack --config webpack.config.js --mode production",
         "build-electron": "node ./src-electron/patch-package-version.js && electron-builder --publish never",
         "postbuild-electron": "node ./src-electron/patch-node-api-dotnet.js && node ./src-electron/rename-builds.js",
-        "start-electron": "electron ."
+        "start-electron": "electron .",
+        "start-web": "node web-server/server.js"
     },
     "repository": {
         "type": "git",
@@ -134,7 +135,9 @@
         }
     },
     "dependencies": {
+        "express": "^5.1.0",
         "hazardous": "^0.3.0",
-        "node-api-dotnet": "^0.9.11"
+        "node-api-dotnet": "^0.9.11",
+        "node-notifier": "^10.0.1"
     }
 }
