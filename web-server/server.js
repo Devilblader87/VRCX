@@ -60,7 +60,7 @@ app.post('/api/app/restart', () => {
 
 const staticDir = path.resolve(__dirname, '../build/html');
 app.use(express.static(staticDir));
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(staticDir, 'index.html'));
 });
 
