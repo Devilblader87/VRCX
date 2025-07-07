@@ -60,7 +60,8 @@ app.post('/api/app/restart', () => {
 
 const staticDir = path.resolve(__dirname, '../build/html');
 app.use(express.static(staticDir));
-app.get('*', (req, res) => {
+// route all other requests to index.html
+app.get('/*splat', (req, res) => {
   res.sendFile(path.join(staticDir, 'index.html'));
 });
 
