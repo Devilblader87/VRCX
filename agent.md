@@ -3,7 +3,11 @@
 - Install project dependencies with `npm install`.
 
 ## Routing Fixes
+
+- Replaced wildcard route `*` in `web-server/server.js` with `/*splat` to avoid "Missing parameter name" errors.
+
 - Replaced wildcard route `*` in `web-server/server.js` with `/*` to avoid "Missing parameter name" errors.
+
 
 ## Core Module Extraction
 - Separate business logic from Electron UI into reusable Node modules.

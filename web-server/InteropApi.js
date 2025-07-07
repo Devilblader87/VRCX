@@ -1,4 +1,10 @@
-const dotnet = require('node-api-dotnet/net9.0');
+let dotnet = null;
+try {
+    dotnet = require('node-api-dotnet/net9.0');
+} catch (err) {
+    console.error('Failed to load node-api-dotnet:', err);
+    // Allows server to start even if .NET is not installed
+}
 
 class InteropApi {
     constructor() {
@@ -7,6 +13,9 @@ class InteropApi {
     }
 
     getDotNetObject(className) {
+        if (!dotnet) {
+            throw new Error('node-api-dotnet module not available');
+        }
         if (!this.createdObjects[className]) {
             console.log(`Creating new instance of ${className}`);
             this.createdObjects[className] = new dotnet.VRCX[className]();
